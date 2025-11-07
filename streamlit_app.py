@@ -93,7 +93,7 @@ def main():
     st.set_page_config(page_title="한글문서작성도우미", layout="wide", page_icon="🤖")
     st.image('data/범피스챗봇.jpeg', width=800)
     st.markdown('---')
-    st.title("안녕하세요! RAG + Web을 활용한 '범피스 검색 챗봇' 입니다")  
+    st.title("안녕하세요! '범피스 검색 챗봇' 입니다")  
 
     with st.sidebar:
         openai_api = st.text_input("OPENAI API 키", type="password")
