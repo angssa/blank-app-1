@@ -55,7 +55,7 @@ def build_agent(tools):
 
     prompt = ChatPromptTemplate.from_messages([
         ("system",
-         "당신은 기보 직원을 돕는 어시스턴스 임 "
+         "당신은 한글문서 작성을 돕는 어시스턴스 임 "
          "항상 `pdf_search`를 사용하세요. "
          "만약 `pdf_search` 관련 결과가 없을 땐, 즉시 `web_search`만 호출하세요. "
          "두 도구를 섞어서 사용하지 마세요. "
@@ -90,10 +90,10 @@ def ask_agent(agent_executor, question: str):
 # 5. Streamlit 메인(UI)
 # --------------------------------------------------------------------
 def main():
-    st.set_page_config(page_title="기술보증기금 AI 비서", layout="wide", page_icon="🤖")
-    st.image('data/IVORY.jpg', width=800)
+    st.set_page_config(page_title="한글문서작성도우미", layout="wide", page_icon="🤖")
+    st.image('data/범피스챗봇.jpg', width=800)
     st.markdown('---')
-    st.title("안녕하세요! RAG + Web을 활용한 '기술보증기금 AI 비서' 입니다")  
+    st.title("안녕하세요! RAG + Web을 활용한 '범피스 검색 챗봇' 입니다")  
 
     with st.sidebar:
         openai_api = st.text_input("OPENAI API 키", type="password")
