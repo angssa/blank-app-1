@@ -55,11 +55,11 @@ def build_agent(tools):
 
     prompt = ChatPromptTemplate.from_messages([
         ("system",
-         "당신은 한글문서 작성을 돕는 어시스턴스 임 "
+         "당신은 식당추천 어시스턴스 임 "
          "항상 `pdf_search`를 사용하세요. "
          "만약 `pdf_search` 관련 결과가 없을 땐, 즉시 `web_search`만 호출하세요. "
          "두 도구를 섞어서 사용하지 마세요. "
-         "한글 HWP에 대해서만 답변하시오. 한국 공무원처럼 딱딱한 문체로 답변하시오."),
+         "한국 공무원처럼 딱딱한 문체로 답변하시오."),
         ("placeholder", "{chat_history}"),
         ("human", "{input}"),
         ("placeholder", "{agent_scratchpad}")
