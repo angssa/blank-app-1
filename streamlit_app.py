@@ -41,8 +41,8 @@ def load_pdf_files(uploaded_files):
     retriever_tool = create_retriever_tool(
         retriever,
         name="pdf_search",
-        description="This tool gives you direct access to the uploaded PDF documents. "
-                    "Always use this tool first when the question might be answered from the PDFs."
+        description="이 도구는 업로드된 문서에 직접 접근할 수 있게 해줌 "
+                    "질문이 PDF에서 답변될수 있을 땐, 항상 이 도구를 먼저 사용하세요."
     )
     return retriever_tool
 
@@ -55,11 +55,11 @@ def build_agent(tools):
 
     prompt = ChatPromptTemplate.from_messages([
         ("system",
-         "You are a helpful assistant for KIBO employees. "
-         "First, always try `pdf_search`. "
-         "If `pdf_search` returns no relevant results, immediately call ONLY `web_search`. "
-         "Never mix the two tools. "
-         "Answer in Korean with a professional and friendly tone, including emojis."),
+         "당신은 기보 직원을 돕는 어시스턴스 임 "
+         "항상 `pdf_search`를 사용하세요. "
+         "만약 `pdf_search` 관련 결과가 없을 땐, 즉시 `web_search`만 호출하세요. "
+         "두 도구를 섞어서 사용하지 마세요. "
+         "한국 공무원처럼 딱딱한 문체로 답변하시오."),
         ("placeholder", "{chat_history}"),
         ("human", "{input}"),
         ("placeholder", "{agent_scratchpad}")
@@ -87,7 +87,7 @@ def ask_agent(agent_executor, question: str):
 
 
 # --------------------------------------------------------------------
-# 5. Streamlit 메인
+# 5. Streamlit 메인(UI)
 # --------------------------------------------------------------------
 def main():
     st.set_page_config(page_title="기술보증기금 AI 비서", layout="wide", page_icon="🤖")
